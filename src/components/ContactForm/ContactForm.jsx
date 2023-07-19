@@ -6,6 +6,7 @@ class ContactForm extends React.Component {
   state = {
     name: '',
     number: '',
+    nameError: '',
   };
 
   handleNameChange = event => {
