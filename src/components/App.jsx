@@ -10,8 +10,6 @@ export class App extends React.Component {
     this.state = {
       contacts: [],
       filter: '',
-      name: '',
-      number: '',
     };
   }
 
@@ -53,7 +51,7 @@ export class App extends React.Component {
   };
 
   render() {
-    const { contacts, filter, name, number } = this.state;
+    const { contacts, filter } = this.state;
 
     const filteredContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
@@ -71,13 +69,7 @@ export class App extends React.Component {
       >
         <div>
           <h1>Phonebook</h1>
-          <ContactForm
-            name={name}
-            number={number}
-            onNameChange={this.handleNameChange}
-            onNumberChange={this.handleNumberChange}
-            onSubmit={this.handleSubmit}
-          />
+          <ContactForm onSubmit={this.handleSubmit} />
 
           <h2>Contacts</h2>
           <Filter value={filter} onChange={this.handleFilterChange} />
