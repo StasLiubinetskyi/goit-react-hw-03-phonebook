@@ -6,10 +6,10 @@ const ContactList = ({ contacts, onDelete }) => {
   return (
     <ContactListStyled>
       <ul>
-        {contacts.map(contact => (
-          <li key={contact.id}>
-            {contact.name}: {contact.number}
-            <button type="button" onClick={() => onDelete(contact.id)}>
+        {contacts.map(({ id, name, number }) => (
+          <li key={id}>
+            {name}: {number}
+            <button type="button" onClick={() => onDelete(id)}>
               Delete
             </button>
           </li>
